@@ -9,7 +9,7 @@ function onRegisterForm(event) {
     const password = formElements.password.value;
  
     if (mail.trim() == '' || password.trim() == '') {
-        alert('error');
+        return alert('error');
     } else {
         const formData = {
         mail,
