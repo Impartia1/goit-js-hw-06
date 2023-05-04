@@ -15,25 +15,8 @@ const images = [
 
 const ulEl = document.querySelector('.gallery');
 
-ulEl.insertAdjacentHTML('beforeend', `<li class = 'gallery-item'><img class = 'gallery-img' src = '${images[0].url}' alt = '${images[0].alt}'></li><li class = 'gallery-item'><img class = 'gallery-img' src = '${images[1].url}' alt = '${images[1].alt}'></li><li class = 'gallery-item'><img class = 'gallery-img' src = '${images[2].url}' alt = '${images[2].alt}'></li>`);
-// ulEl.insertAdjacentHTML('beforeend', `<li class = 'gallery-item'><img class = 'gallery-img' src = '${images[1].url}' alt = '${images[1].alt}'></li>`);
-// ulEl.insertAdjacentHTML('beforeend', `<li class = 'gallery-item'><img class = 'gallery-img' src = '${images[2].url}' alt = '${images[2].alt}'></li>`);
-console.log(ulEl);
+const markup = images.map(({url, alt}) => `<li class='gallery-item'><img class='gallery-img' src='${url}' alt='${alt}'></li>`).join('');
+ulEl.insertAdjacentHTML('beforeend', markup);
 
-
-
-
-// for (let i = 0; i < images.length; i++) {
-//   const liEl = document.createElement('li');
-//   liEl.classList.add('gallery-item');
-
-//   const imageLiEl = document.createElement('img');
-//   imageLiEl.classList.add('gallery-img');
-//   imageLiEl.src = images[i].url;
-//   imageLiEl.alt = images[i].alt;
-
-//   liEl.appendChild(imageLiEl);
-//   ulEl.appendChild(liEl);
-// };
 
 
